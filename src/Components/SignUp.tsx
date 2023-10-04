@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useSignupMutation } from "../redux/services/auth/authApi";
 
-
-
 const SignUp = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -15,6 +13,8 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [signUp] = useSignupMutation();
   const [loading, setLoading] = useState(false);
+
+
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
