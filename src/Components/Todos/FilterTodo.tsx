@@ -5,7 +5,6 @@ import {
   IfilterCriteria,
   filterCriteriaInitialState,
 } from "../../utils/types/type";
-// import { IfilteredData, IformData } from "../../utils/types/type";
 
 interface Ifilter {
   filterCriteria: IfilterCriteria;
@@ -22,12 +21,14 @@ const FilterTodo: React.FC<Ifilter> = ({
   const [selectedOption, setSelectedOption] = useState("select an option");
 
   const handleFilter = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: React.ChangeEvent<HTMLInputElement & HTMLSelectElement>
   ) => {
     const { name, value, type } = event.target;
+
     if (type === "checkbox") {
       const updatedCriteria = {
         ...filterCriteria,
+
         [name]: event.target.checked,
       };
       setFilterCriteria(updatedCriteria);

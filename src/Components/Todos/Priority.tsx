@@ -1,4 +1,4 @@
-import { IformData } from "./Todos";
+import { IformData } from "../../utils/types/type";
 
 const Priority = ({
   handleChange,
@@ -21,7 +21,6 @@ const Priority = ({
         id=""
       >
         {priority_lst.map((priority, index) => {
-          
           return (
             <option
               selected={formData.priority === priority.priorityId}
