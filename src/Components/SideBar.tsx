@@ -21,19 +21,16 @@ const SideBar = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    const response = await logout(token);
-    try {
-      if (response.error) {
-        toast.error(response.error.data.detail);
-      } else {
+
+    logout(token)
+      .unwrap()
+      .then(() => {
         dispatch(clearToken());
         navigate("/");
         toast.success(`Logout Succcessfull !`);
         console.log("checking");
-      }
-    } catch (error) {
-      toast.error(response.error.data.detail);
-    }
+      })
+      .catch((err) => toast.error(err.data.detail!));
   };
   return (
     <div
@@ -68,7 +65,7 @@ const SideBar = () => {
                 : "hover:bg-[#F0F8FF] p-2 rounded-full"
             }
           >
-            <CiUser className="  cursor-pointer" size={20}  />
+            <CiUser className="  cursor-pointer" size={20} />
           </NavLink>
         </div>
         <div className=" flex flex-col  ">
