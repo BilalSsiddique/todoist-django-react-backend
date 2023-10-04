@@ -1,0 +1,137 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #96b6c5 !important;
+}
+
+a.active {
+  border-radius: 50%;
+  background-color: #3e187a;
+  background-image: linear-gradient(316deg, #3e187a 0%, #994ecc 74%);
+  padding: 8px;
+  color: #f0f8ff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* LOADER */
+
+.spinner {
+  width: 44.8px;
+  height: 44.8px;
+  animation: spinner-y0fdc1 2s infinite ease;
+  transform-style: preserve-3d;
+}
+
+.spinner > div {
+  background-color: #3e187a;
+  background-image: linear-gradient(316deg, #3e187a 0%, #994ecc 74%);
+
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 2.2px solid white;
+}
+
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-22.4px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+  transform: translateZ(22.4px);
+}
+
+@keyframes spinner-y0fdc1 {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+  }
+
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
+
+/* Gradient */
+
+.bg-color {
+  background-color: #3e187a;
+  background-image: linear-gradient(316deg, #3e187a 0%, #994ecc 74%);
+}
+
+.loader2 {
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: purple 3px solid;
+  border-top: transparent;
+  border-radius: 50%;
+  animation: animate81323 0.8s linear infinite;
+}
+
+@keyframes animate81323 {
+  0% {
+    border: 3px solid rgb(168, 75, 255);
+    border-top: transparent;
+    border-left: transparent;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    border: 3px dashed rgb(240, 41, 240);
+    border-top: transparent;
+    border-left: transparent;
+    transform: rotate(270deg);
+  }
+
+  100% {
+    border: 3px dotted rgb(28, 228, 28);
+    border-top: transparent;
+    border-left: transparent;
+    transform: rotate(360deg);
+  }
+}
